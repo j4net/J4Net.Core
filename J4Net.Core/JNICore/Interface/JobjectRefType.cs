@@ -1,4 +1,4 @@
-﻿namespace JNet.Core.JNICore.Interface
+﻿namespace J4Net.Core.JNICore.Interface
 {
     public enum JobjectRefType
     {

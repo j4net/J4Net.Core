@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-namespace JNet.Core.JNICore.Library
+namespace J4Net.Core.JNICore.Library
 {
     public static class LibraryLoader
     {

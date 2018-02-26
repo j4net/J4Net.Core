@@ -1,7 +1,7 @@
 ﻿using System;
-using JNet.Core.JNICore.Interface;
+using J4Net.Core.JNICore.Interface;
 
-namespace JNet.Core.JNICore.Library
+namespace J4Net.Core.JNICore.Library
 {
     public class JvmLibrary : Library
     {

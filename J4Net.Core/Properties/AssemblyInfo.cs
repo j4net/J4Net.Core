@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JNet.Core")]
+[assembly: AssemblyTitle("J4Net.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JNet.Core")]
+[assembly: AssemblyProduct("J4Net.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3b51d31b-3f5f-427f-a6d6-e059b3654044")]
+[assembly: Guid("2e82ff68-dbf8-4969-91b4-0a6e1defa981")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using JNet.Core.JNICore.Interface;
+using J4Net.Core.JNICore.Interface;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public class JavaOption
     {

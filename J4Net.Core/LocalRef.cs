@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public class LocalRef : Ref
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     [Serializable]
     public class JavaException : Exception

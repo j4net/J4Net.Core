@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace JNet.Core.JNICore.Interface
+namespace J4Net.Core.JNICore.Interface
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct JniEnv
+    public struct JavaVm
     {
         private readonly IntPtr functions;
 

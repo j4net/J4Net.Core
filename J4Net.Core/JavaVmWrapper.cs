@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using JNet.Core.JNICore.Interface;
+using J4Net.Core.JNICore.Interface;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public class JavaVmWrapper
     {

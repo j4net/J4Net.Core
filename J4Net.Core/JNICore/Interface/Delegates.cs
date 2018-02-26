@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace JNet.Core.JNICore.Interface
+namespace J4Net.Core.JNICore.Interface
 {
     unsafe delegate int CreateJavaVm(IntPtr* pvm, IntPtr* penv, IntPtr args);
 

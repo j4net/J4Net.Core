@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using JNet.Core.JNICore.Interface;
-using JNet.Core.JNICore.Library;
+using J4Net.Core.JNICore.Interface;
+using J4Net.Core.JNICore.Library;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public class JvmManager
     {

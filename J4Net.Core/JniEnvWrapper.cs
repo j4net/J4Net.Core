@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
-using JNet.Core.JNICore.Interface;
-using JNet.Core.Util;
+using J4Net.Core.JNICore.Interface;
+using J4Net.Core.Util;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public class JniEnvWrapper
     {
@@ -303,18 +303,19 @@ namespace JNet.Core
 
         private void SafeJniCallVoid(Action func)
         {
-            GetDelegate<ExceptionClear>(functions.ExceptionClearPtr)(envPtr);
+            ClearContext();
             func();
         }
 
-        public bool TryCheckEcxeptions(ref GlobalRef ex)
+        public bool TryCatchEcxeption(out LocalRef ex)
         {
             if (GetDelegate<ExceptionCheck>(functions.ExceptionCheckPtr)(envPtr))
             {
-                ex = new GlobalRef(GetDelegate<ExceptionOccurred>(functions.ExceptionOccurredPtr)(envPtr));
+                ex = new LocalRef(GetDelegate<ExceptionOccurred>(functions.ExceptionOccurredPtr)(envPtr));
                 return true;
             }
 
+            ex = null;
             return false;
         }
 

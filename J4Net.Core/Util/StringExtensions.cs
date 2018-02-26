@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace JNet.Core.Util
+namespace J4Net.Core.Util
 {
     public static class StringExtensions
     {

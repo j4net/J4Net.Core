@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace JNet.Core
+namespace J4Net.Core
 {
     public abstract class Ref : IDisposable
     {
