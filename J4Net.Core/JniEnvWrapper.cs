@@ -144,11 +144,17 @@ namespace J4Net.Core
             });
         }
 
-        public LocalRef GetStaticMethodId(IntPtr classP, string name, string sig)
+        public GlobalRef GetStaticMethodId(IntPtr classP, string name, string sig)
         {
-            return new LocalRef(
-                SafeJniCall(GetDelegate<GetStaticMethodId>(functions.GetStaticMethodIDPtr).Invoke, classP,
-                    name.ToUtfBytes(), sig.ToUtfBytes()));
+            var localRef = SafeJniCall(GetDelegate<GetStaticMethodId>(functions.GetStaticMethodIDPtr).Invoke, classP, name.ToUtfBytes(), sig.ToUtfBytes());
+            try
+            {
+                return GetGlobalRef(localRef);
+            }
+            finally
+            {
+                DeleteLocalRef(localRef);
+            }
         }
 
         public LocalRef CallObjectMethod(IntPtr obj, IntPtr methodId, params JValue[] args)
@@ -225,7 +231,7 @@ namespace J4Net.Core
         public LocalRef CallStaticObjectMethod(IntPtr classP, IntPtr methodId, params JValue[] args)
         {
             return new LocalRef(
-                SafeJniCall(GetDelegate<CallStaticObjectMethodA>(functions.CallStaticIntMethodAPtr).Invoke,
+                SafeJniCall(GetDelegate<CallStaticObjectMethodA>(functions.CallStaticObjectMethodAPtr).Invoke,
                     classP,
                     methodId, args));
         }
