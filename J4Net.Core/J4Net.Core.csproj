@@ -57,6 +57,7 @@
     <Compile Include="JNICore\Interface\JniNativeMethod.cs" />
     <Compile Include="JNICore\Interface\JobjectRefType.cs" />
     <Compile Include="JNICore\Interface\JValue.cs" />
+    <Compile Include="JNICore\JniConstants.cs" />
     <Compile Include="JNICore\Library\JvmLibrary.cs" />
     <Compile Include="JNICore\Library\Library.cs" />
     <Compile Include="JNICore\Library\LibraryLoader.cs" />

@@ -21,6 +21,17 @@ namespace J4Net.Core
             return GetDelegate<AttachCurrentThread>(functions.AttachCurrentThreadVoidMethodPtr)
                 .Invoke(javaVmPtr, env, arg);
         }
+
+        public unsafe int GetEnv(IntPtr* env, int version)
+        {
+            return GetDelegate<GetEnv>(functions.GetEnvVoidMethodPtr).Invoke(javaVmPtr, env, version);
+        }
+
+        public unsafe int DetachCurrentThread()
+        {
+            return GetDelegate<DetachCurrentThread>(functions.DetachCurrentThreadVoidMethodPtr).Invoke(javaVmPtr);
+        }
+
         public int DestroyJavaVm()
         {
             return GetDelegate<DestroyJavaVm>(functions.DestroyJavaVMVoidMethodPtr).Invoke(javaVmPtr);

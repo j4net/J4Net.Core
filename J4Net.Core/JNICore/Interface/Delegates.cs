@@ -13,9 +13,9 @@ namespace J4Net.Core.JNICore.Interface
 
     delegate int DetachCurrentThread(IntPtr vm);
 
-    delegate int GetEnv(IntPtr vm, IntPtr penv, int version);
+    unsafe delegate int GetEnv(IntPtr vm, IntPtr* penv, int version);
 
-    delegate int AttachCurrentThreadAsDaemon(IntPtr vm, IntPtr penv, IntPtr args);
+    unsafe delegate int AttachCurrentThreadAsDaemon(IntPtr vm, IntPtr* penv, IntPtr args);
 
 
     delegate int GetVersion(IntPtr env);
