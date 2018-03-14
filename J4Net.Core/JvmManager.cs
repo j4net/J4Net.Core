@@ -117,5 +117,10 @@ namespace J4Net.Core
                 return env;
             }
         }
+
+        internal void DetachCurrentThread()
+        {
+            vm.DetachCurrentThread();
+        }
     }
 }
