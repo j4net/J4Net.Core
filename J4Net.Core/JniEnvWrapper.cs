@@ -191,16 +191,15 @@ namespace J4Net.Core
         }
 
 
-        public UtfString NewStringUtf(string utf)
+        public LocalRef NewStringUtf(string utf)
         {
-            return new UtfString(
-                new LocalRef(
-                    SafeJniCall(GetDelegate<NewStringUtf>(functions.NewStringUTFPtr).Invoke,
-                        utf.ToUtfBytes())
-                ));
+            return new LocalRef(
+                SafeJniCall(GetDelegate<NewStringUtf>(functions.NewStringUTFPtr).Invoke,
+                    utf.ToUtfBytes())
+            );
         }
 
-        public LocalRef GetStringUtfChars(IntPtr str, bool isCopy)
+        public LocalRef GetStringUtfChars(IntPtr str, IntPtr isCopy)
         {
             return new LocalRef(
                 SafeJniCall(GetDelegate<GetStringUtfChars>(functions.GetStringUTFCharsPtr).Invoke, str, isCopy)
