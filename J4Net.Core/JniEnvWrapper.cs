@@ -146,7 +146,8 @@ namespace J4Net.Core
 
         public GlobalRef GetStaticMethodId(IntPtr classP, string name, string sig)
         {
-            var localRef = SafeJniCall(GetDelegate<GetStaticMethodId>(functions.GetStaticMethodIDPtr).Invoke, classP, name.ToUtfBytes(), sig.ToUtfBytes());
+            var localRef = SafeJniCall(GetDelegate<GetStaticMethodId>(functions.GetStaticMethodIDPtr).Invoke, classP,
+                name.ToUtfBytes(), sig.ToUtfBytes());
             try
             {
                 return GetGlobalRef(localRef);
@@ -190,12 +191,25 @@ namespace J4Net.Core
         }
 
 
-        public LocalRef NewStringUtf(string utf)
+        public UtfString NewStringUtf(string utf)
+        {
+            return new UtfString(
+                new LocalRef(
+                    SafeJniCall(GetDelegate<NewStringUtf>(functions.NewStringUTFPtr).Invoke,
+                        utf.ToUtfBytes())
+                ));
+        }
+
+        public LocalRef GetStringUtfChars(IntPtr str, bool isCopy)
         {
             return new LocalRef(
-                SafeJniCall(GetDelegate<NewStringUtf>(functions.NewStringUTFPtr).Invoke,
-                    utf.ToUtfBytes())
+                SafeJniCall(GetDelegate<GetStringUtfChars>(functions.GetStringUTFCharsPtr).Invoke, str, isCopy)
             );
+        }
+
+        public void ReleaseStringUtfChars(IntPtr str, IntPtr chars)
+        {
+            SafeJniCallA(GetDelegate<ReleaseStringUtfChars>(functions.ReleaseStringUTFCharsPtr).Invoke, str, chars);
         }
 
         public string GetString(IntPtr stringPointer)

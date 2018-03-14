@@ -552,10 +552,10 @@ namespace J4Net.Core.JNICore.Interface
         (IntPtr env, IntPtr str);
 
     delegate IntPtr GetStringUtfChars
-        (IntPtr env, IntPtr str, [MarshalAs(UnmanagedType.U1)] ref bool isCopy);
+        (IntPtr env, IntPtr str, [MarshalAs(UnmanagedType.U1)] bool isCopy);
 
     delegate void ReleaseStringUtfChars
-        (IntPtr env, IntPtr str, [MarshalAs(UnmanagedType.LPArray)] ushort[] chars);
+        (IntPtr env, IntPtr str, IntPtr chars);
 
 
     delegate int GetArrayLength
