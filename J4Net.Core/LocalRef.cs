@@ -7,9 +7,9 @@ namespace J4Net.Core
         public LocalRef(IntPtr ptr) : base(ptr)
         {
         }
-        protected override void RemovePtr(IntPtr ptr)
+        protected override void RemovePtr()
         {
-            JvmManager.INSTANCE.GetEnv().DeleteLocalRef(ptr);
+            JvmManager.INSTANCE.GetEnv().DeleteLocalRef(Ptr);
         }
     }
 }

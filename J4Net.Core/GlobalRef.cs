@@ -13,9 +13,9 @@ namespace J4Net.Core
             Dispose();
         }
 
-        protected override void RemovePtr(IntPtr ptr)
+        protected override void RemovePtr()
         {
-            JvmManager.INSTANCE.GetEnv().DeleteGlobalRef(ptr);
+            JvmManager.INSTANCE.GetEnv().DeleteGlobalRef(Ptr);
         }
     }
 }

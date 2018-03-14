@@ -22,10 +22,10 @@ namespace J4Net.Core
         {
             if (Interlocked.CompareExchange(ref disposed, 1, 0) == 0)
             {
-                RemovePtr(Ptr);
+                RemovePtr();
             }
         }
 
-        protected abstract void RemovePtr(IntPtr ptr);
+        protected abstract void RemovePtr();
     }
 }
